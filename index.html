@@ -7,21 +7,23 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
     <body>
-        <!-- content in these paragraphs gets overwritten with scripted content -->
-        <p id="a1"></p>
-         <p id="a2"></p>
         <script>
             // prompt user for name and type
             let sentinel = "Done";
+            let rate = 0;
             let userName = prompt('Welcome! Please enter your name to get started: ');
             let input = "";
-            while 
-            // console logs
-            console.log(userName + ', you picked ' + userType + '!');
-            console.log('The computer picked Bear!');
-            // changes the content above
-            document.getElementById("a1").innerHTML = (userName + ', you picked ' + userType + '!');
-            document.getElementById("a2").innerHTML = ('The computer picked Bear!');
+            let sum = 0;
+            while (input != sentinel) {
+                input = prompt("Hi " + userName + ". Please enter the dollar amount of your sales a single sale at a time. Enter \"Done\" when finished.");
+                if (!isNaN(inputValue)) {
+                    sum += input;
+                    alert(sum);
+                } else {
+                    alert("Input is not a number!");
+                }
+            }
+            }
          </script>
          
      </body>
