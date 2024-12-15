@@ -26,12 +26,15 @@
                 if (input === null) {
                     input = "nashrata_no!.mp3";
                 }
-                if (!isNaN(input)) {
-                    salesEarnings += input;
-                    alert(salesEarnings);
-                } else {
-                    alert("The given input was not valid.");
+                if (input !== sentinel) {
+                    if (!isNaN(input)) {
+                        salesEarnings += input;
+                        alert(salesEarnings);
+                    } else {
+                        alert("The given input was not valid.");
+                    }
                 }
+                
             }
             if (salesEarnings >= 0.01 && salesEarnings <= 499.99) {
                 rate = 0.05;
