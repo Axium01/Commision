@@ -14,9 +14,8 @@
             let rateMsg = "0%";
             let totalEarnings = 0;
             let commissionEarnings = 0;
-            let sumEarnings = 0;
             let salesEarnings = 0;
-            let userName = prompt('Welcome! Please enter your name to get started: ');
+            let userName = prompt('Welcome! Please enter your name to get started.');
             if (userName === null) {
                 userName = "[NO NAME]";
             }
@@ -31,7 +30,7 @@
                         salesEarnings += input;
                         alert(salesEarnings);
                     } else {
-                        alert("The given input was not valid.");
+                        alert("The given input was not valid. If your finished, enter \"Done\".");
                     }
                 }
                 
@@ -49,7 +48,11 @@
                 rate = 0;
                 rateMsg = "0%";
             }
-            document.write("Hello, " + userName + "!"); 
+            commissionEarnings = salesEarnings * rate;
+            totalEarnings = salesEarnings + commissionEarnings;
+            document.write("Hello " + userName + ". Here is your Weekly Commission Report.\nYour sales total is $" +
+                          salesEarnings + ", so your commission rate is " + rateMsg + ".\nYour total commission is $" +
+                          commissionEarnings + ".\nYour total earnings are $" + totalEarnings + "."); 
          </script>
          
      </body>
