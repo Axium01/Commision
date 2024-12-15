@@ -11,18 +11,42 @@
             // prompt user for name and type
             let sentinel = "Done";
             let rate = 0;
+            let rateMsg = "0%";
+            let totalEarnings = 0;
+            let commissionEarnings = 0;
+            let sumEarnings = 0;
+            let salesEarnings = 0;
             let userName = prompt('Welcome! Please enter your name to get started: ');
+            if (userName === null) {
+                userName = "[NO NAME]";
+            }
             let input = "";
-            let sum = 0;
             while (input != sentinel) {
                 input = prompt("Hi " + userName + ". Please enter the dollar amount of your sales a single sale at a time. Enter \"Done\" when finished.");
-                if (!isNaN(inputValue)) {
-                    sum += input;
-                    alert(sum);
+                if (input === null) {
+                    input = "nashrata_no!.mp3";
+                }
+                if (!isNaN(input)) {
+                    salesEarnings += input;
+                    alert(salesEarnings);
                 } else {
-                    alert("The given input is not valid.");
+                    alert("The given input was not valid.");
                 }
             }
+            if (salesEarnings >= 0.01 && salesEarnings <= 499.99) {
+                rate = 0.05;
+                rateMsg = "5%";
+            } else if (salesEarnings >= 500 && salesEarnings <= 999.99) {
+                rate = 0.1;
+                rateMsg = "10%";
+            } else if (salesEarnings > 1000) {
+                rate = 0.15;
+                rateMsg = "15%";
+            } else {
+                rate = 0;
+                rateMsg = "0%";
+            }
+            document.write("Hello, " + userName + "!"); 
             }
          </script>
          
